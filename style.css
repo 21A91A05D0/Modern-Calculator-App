@@ -1,0 +1,133 @@
+:root {
+    --bg: #edf1f5;
+    --panel-bg: #ffffff;
+    --text: #000;
+    --btn: #e4e7eb;
+    --btn-hover: #d9dde2;
+    --op: #ffce73;
+    --op-hover: #f3c166;
+    --equal: #6fdab8;
+    --equal-hover: #5fcaa8;
+}
+
+body.dark {
+    --bg: #121212;
+    --panel-bg: #1e1e1e;
+    --text: #ffffff;
+    --btn: #2a2d31;
+    --btn-hover: #35383c;
+    --op: #d69c37;
+    --op-hover: #c18b2e;
+    --equal: #2ba88e;
+    --equal-hover: #23977f;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text);
+    transition: 0.3s;
+    padding: 20px;
+}
+
+/* Header Title + Toggle */
+/* HEADER SECTION */
+.header {
+    width: 100%;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Center Title */
+.header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* Move Theme Toggle to the Right End of the Header */
+.theme-toggle {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+.switch input { display: none; }
+.switch {
+    position: relative; width: 50px; height: 24px;
+}
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+.slider {
+    position: absolute; cursor: pointer; background: #ccc;
+    top: 0; left: 0; right: 0; bottom: 0; transition: .4s;
+}
+.slider:before {
+    position: absolute; content: "";
+    height: 18px; width: 18px; left: 3px; bottom: 3px;
+    background: white; transition: .4s;
+}
+input:checked + .slider { background: #6fdab8; }
+input:checked + .slider:before { transform: translateX(26px); }
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.calculator, .history {
+    background: var(--panel-bg);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.calculator { width: 300px; }
+
+#display {
+    width: 100%; height: 60px; border: none;
+    background: var(--btn);
+    margin-bottom: 15px; border-radius: 10px;
+    text-align: right; padding: 15px; font-size: 22px; color: var(--text);
+}
+
+.buttons {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+}
+
+button {
+    padding: 15px; font-size: 18px; border-radius: 10px;
+    border: none; cursor: pointer; background: var(--btn); color: var(--text);
+    transition: 0.15s;
+}
+button:hover { background: var(--btn-hover); }
+
+.op { background: var(--op); }
+.op:hover { background: var(--op-hover); }
+
+.equal {
+    background: var(--equal); color: white; grid-column: span 2;
+}
+.equal:hover { background: var(--equal-hover); }
+
+.history { width: 200px; }
+#historyList { list-style: none; padding: 0; max-height: 300px; overflow-y: auto; }
+#historyList li {
+    padding: 8px; background: var(--btn); margin-bottom: 8px;
+    border-radius: 8px; cursor: pointer;
+}
+#historyList li:hover { background: var(--btn-hover); }
+
+@media (max-width: 600px) {
+    .header { flex-direction: column; gap: 10px; text-align: center; }
+}
