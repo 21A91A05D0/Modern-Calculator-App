@@ -6,9 +6,8 @@ Designed with a **modern UI**, **Dark/Light Theme Toggle**, **History Panel**, a
 ---
 
 ## 🌐 Live Demo
-> *(If deployed, paste your link here – Netlify/GitHub Pages/Vercel)*  
-Example:  
-https://your-username.github.io/Modern-Calculator-App/
+
+https://21a91a05d0.github.io/Modern-Calculator-App/
 
 ---
 
